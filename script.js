@@ -275,15 +275,10 @@ if (music && clickMe) {
 
         music.volume = 0.5;
 
-        music.play()
-            .then(function() {
-                setTimeout(function() {
-                    window.location.href = "letter.html";
-                }, 500);
-            })
-            .catch(function(error) {
-                console.log("Music error:", error);
-                window.location.href = "letter.html";
-            });
+        music.play().then(() => {
+            window.location.href = "letter.html";
+        }).catch(() => {
+            window.location.href = "letter.html";
+        });
     });
 }
