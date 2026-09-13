@@ -270,29 +270,20 @@ const music = document.getElementById("backgroundMusic");
 const clickMe = document.getElementById("clickMe");
 
 if (music && clickMe) {
-
     clickMe.addEventListener("click", function(event) {
-
         event.preventDefault();
 
-        music.volume = 0.25;
+        music.volume = 0.5;
 
         music.play()
             .then(function() {
-
-                console.log("Music started!");
-
                 setTimeout(function() {
                     window.location.href = "letter.html";
                 }, 500);
-
             })
             .catch(function(error) {
-
                 console.log("Music error:", error);
-
+                window.location.href = "letter.html";
             });
-
     });
-
 }
