@@ -1,0 +1,1735 @@
+/* =========================================================
+   MONTHSARY WEBSITE
+   COMPLETE MOBILE-FIRST CSS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    background: #090309;
+    color: white;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   LANDING PAGE
+========================================================= */
+
+.landing-page {
+    width: 100%;
+    min-height: 100dvh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            #681a50 0%,
+            #3e1233 27%,
+            #1d0819 62%,
+            #070207 100%
+        );
+}
+
+
+/* Large central glow */
+
+.landing-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 50%;
+    top: 180px;
+
+    transform: translateX(-50%);
+
+    background: rgba(255, 35, 145, 0.13);
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LANDING CONTENT
+========================================================= */
+
+.landing-content {
+    width: 100%;
+    max-width: 600px;
+
+    height: 100dvh;
+    min-height: 700px;
+
+    margin: auto;
+
+    position: relative;
+
+    text-align: center;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.main-title {
+    position: absolute;
+
+    top: 38px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 95%;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(44px, 12vw, 72px);
+
+    line-height: 0.9;
+
+    font-weight: 600;
+
+    color: white;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.9),
+        0 0 25px rgba(255,90,180,0.7),
+        0 0 50px rgba(255,50,150,0.25);
+
+    animation: titleAppear 1.5s ease both;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+    position: absolute;
+
+    top: 225px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    font-size: 13px;
+
+    font-weight: 300;
+
+    opacity: 0.8;
+
+    z-index: 20;
+
+    animation: fadeIn 2s ease both;
+}
+
+
+/* =========================================================
+   PHOTO COLLAGE
+========================================================= */
+
+.photo-container {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   ALL PHOTO FRAMES
+========================================================= */
+
+.photo {
+    position: absolute;
+
+    width: 115px;
+    height: 155px;
+
+    padding: 6px;
+
+    background: white;
+
+    border-radius: 2px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.55),
+        0 0 10px rgba(255,255,255,0.12);
+
+    transition:
+        transform 0.4s ease;
+
+    pointer-events: none;
+}
+
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   LANDING PHOTO 1
+   Upper / left
+========================================================= */
+
+.photo1 {
+    left: 4%;
+    top: 320px;
+
+    transform: rotate(-12deg);
+
+    animation:
+        photoFloat1 5s ease-in-out infinite,
+        photoAppear 1s ease 0.2s both;
+}
+
+
+/* =========================================================
+   LANDING PHOTO 2
+   Upper / right
+========================================================= */
+
+.photo2 {
+    right: 4%;
+    top: 300px;
+
+    transform: rotate(11deg);
+
+    animation:
+        photoFloat2 5s ease-in-out infinite,
+        photoAppear 1s ease 0.4s both;
+}
+
+
+/* =========================================================
+   LANDING PHOTO 3
+   Lower / left
+========================================================= */
+
+.photo3 {
+    left: 13%;
+    top: 500px;
+
+    transform: rotate(-7deg);
+
+    animation:
+        photoFloat3 5.5s ease-in-out infinite,
+        photoAppear 1s ease 0.6s both;
+}
+
+
+/* =========================================================
+   LANDING PHOTO 4
+   Lower / right
+========================================================= */
+
+.photo4 {
+    right: 11%;
+    top: 515px;
+
+    transform: rotate(9deg);
+
+    animation:
+        photoFloat4 5.5s ease-in-out infinite,
+        photoAppear 1s ease 0.8s both;
+}
+
+
+/* =========================================================
+   CLICK ME HEART
+========================================================= */
+
+.heart-button {
+    position: fixed;
+
+    left: 50%;
+    bottom: 14px;
+
+    transform: translateX(-50%);
+
+    width: 135px;
+    height: 125px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    z-index: 100;
+
+    animation:
+        heartbeatButton 1.5s ease-in-out infinite;
+}
+
+
+/* Heart */
+
+.heart-button span {
+    position: absolute;
+
+    font-size: 135px;
+
+    line-height: 1;
+
+    color: #ff2175;
+
+    text-shadow:
+        0 0 8px #ff2175,
+        0 0 20px #ff2175,
+        0 0 45px rgba(255,30,120,0.65);
+}
+
+
+/* Click Me */
+
+.heart-button p {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: white;
+}
+
+
+/* =========================================================
+   FIREWORKS
+========================================================= */
+
+#fireworks {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   HEART PARTICLES
+========================================================= */
+
+#heart-container {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 6;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LETTER PAGE
+========================================================= */
+
+.letter-page {
+    width: 100%;
+
+    min-height: 100dvh;
+
+    position: relative;
+
+    overflow-x: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #641947 0%,
+            #3a102f 30%,
+            #190718 65%,
+            #070207 100%
+        );
+}
+
+
+/* Letter background glow */
+
+.letter-page::before {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        rgba(255,40,145,0.12);
+
+    filter: blur(110px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LETTER WRAPPER
+========================================================= */
+
+.letter-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100dvh;
+
+    padding:
+        50px 18px
+        100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LETTER CARD
+========================================================= */
+
+.letter {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    padding:
+        35px 22px;
+
+    background:
+        rgba(255,255,255,0.065);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius:
+        20px;
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.45);
+
+    animation:
+        letterAppear 1.2s ease both;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   LETTER TITLE
+========================================================= */
+
+.letter h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(38px, 10vw, 58px);
+
+    line-height:
+        1;
+
+    text-align:
+        center;
+
+    margin-bottom:
+        30px;
+
+    text-shadow:
+        0 0 20px rgba(255,100,180,0.35);
+}
+
+
+/* =========================================================
+   LETTER TEXT
+========================================================= */
+
+.letter-text {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(20px, 5.3vw, 25px);
+
+    line-height:
+        1.7;
+
+    text-align:
+        left;
+}
+
+
+.letter-text p {
+    margin-bottom:
+        24px;
+}
+
+
+/* Signature */
+
+.signature {
+    text-align:
+        right;
+
+    font-style:
+        italic;
+
+    margin-top:
+        35px;
+}
+
+
+/* =========================================================
+   LETTER PHOTO FRAMES
+========================================================= */
+
+/*
+   Add these five divs inside letter-wrapper:
+
+   <div class="letter-photo frame1">
+       <img src="images/letter1.jpg">
+   </div>
+
+   <div class="letter-photo frame2">
+       <img src="images/letter2.jpg">
+   </div>
+
+   <div class="letter-photo frame3">
+       <img src="images/letter3.jpg">
+   </div>
+
+   <div class="letter-photo frame4">
+       <img src="images/letter4.jpg">
+   </div>
+
+   <div class="letter-photo frame5">
+       <img src="images/letter5.jpg">
+   </div>
+*/
+
+
+.letter-photo {
+    position: absolute;
+
+    width: 82px;
+    height: 105px;
+
+    padding: 5px;
+
+    background: white;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.5);
+
+    z-index: 15;
+
+    overflow: hidden;
+}
+
+
+.letter-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* Frame 1 */
+
+.frame1 {
+    left: 5%;
+    top: 100px;
+
+    transform:
+        rotate(-12deg);
+}
+
+
+/* Frame 2 */
+
+.frame2 {
+    right: 4%;
+    top: 180px;
+
+    transform:
+        rotate(10deg);
+}
+
+
+/* Frame 3 */
+
+.frame3 {
+    left: 2%;
+    top: 390px;
+
+    transform:
+        rotate(8deg);
+}
+
+
+/* Frame 4 */
+
+.frame4 {
+    right: 3%;
+    top: 500px;
+
+    transform:
+        rotate(-9deg);
+}
+
+
+/* Frame 5 */
+
+.frame5 {
+    left: 50%;
+    bottom: 35px;
+
+    transform:
+        translateX(-50%)
+        rotate(4deg);
+}
+
+
+/* =========================================================
+   MORE BUTTON
+========================================================= */
+
+.more-button {
+    position: relative;
+
+    z-index: 30;
+
+    margin-top:
+        45px;
+
+    padding:
+        15px 25px;
+
+    border:
+        1px solid rgba(255,120,175,0.5);
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,70,140,0.12);
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        0.3s ease;
+}
+
+
+.more-button:hover {
+    background:
+        #e91e63;
+
+    border-color:
+        #e91e63;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(233,30,99,0.4);
+}
+
+
+.more-button:active {
+    transform:
+        scale(0.94);
+}
+
+
+/* =========================================================
+   FLOATING HEARTS — LETTER
+========================================================= */
+
+#floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+.floating-heart {
+    position: fixed;
+
+    bottom:
+        -60px;
+
+    color:
+        rgba(255,120,185,0.45);
+
+    pointer-events:
+        none;
+
+    animation:
+        floatHeart linear forwards;
+}
+
+
+/* =========================================================
+   REASONS PAGE
+========================================================= */
+
+.reasons-page {
+    width: 100%;
+
+    min-height: 100dvh;
+
+    position: relative;
+
+    overflow-x: hidden;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #621745 0%,
+            #370e2d 30%,
+            #180616 65%,
+            #050105 100%
+        );
+}
+
+
+.reasons-page::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: 40%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        rgba(255,40,145,0.1);
+
+    filter:
+        blur(120px);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   REASONS HEADER
+========================================================= */
+
+.reasons-header {
+    width: 100%;
+
+    min-height:
+        100dvh;
+
+    padding:
+        30px 20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+}
+
+
+.reasons-header h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(70px, 20vw, 120px);
+
+    line-height:
+        0.8;
+}
+
+
+.reasons-header h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(35px, 9vw, 60px);
+
+    color:
+        #ff9bc2;
+
+    margin-top:
+        15px;
+}
+
+
+.reasons-header p {
+    margin-top:
+        60px;
+
+    font-size:
+        13px;
+
+    opacity:
+        0.55;
+
+    animation:
+        bounce 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   REASONS
+========================================================= */
+
+.reasons-container {
+    width: 100%;
+
+    padding:
+        0 20px;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+}
+
+
+.reason {
+    width: 100%;
+
+    min-height:
+        100dvh;
+
+    padding:
+        30px 5px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    opacity:
+        0.15;
+
+    transform:
+        scale(0.88)
+        translateY(30px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+
+.reason.active {
+    opacity:
+        1;
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+.reason span {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        28px;
+
+    color:
+        #ff7ead;
+
+    margin-bottom:
+        25px;
+
+    text-shadow:
+        0 0 15px rgba(255,70,150,0.5);
+}
+
+
+.reason p {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(27px, 7.5vw, 44px);
+
+    line-height:
+        1.3;
+
+    max-width:
+        700px;
+}
+
+
+/* =========================================================
+   REASON HEARTS
+========================================================= */
+
+#reason-hearts {
+    position: fixed;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+
+    z-index:
+        4;
+}
+
+
+.reason-heart {
+    position:
+        fixed;
+
+    bottom:
+        -50px;
+
+    color:
+        rgba(255,90,160,0.3);
+
+    animation:
+        reasonHeartFloat linear forwards;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.final-message {
+    width:
+        100%;
+
+    min-height:
+        100dvh;
+
+    padding:
+        30px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    z-index:
+        10;
+}
+
+
+.final-message h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(42px, 10vw, 75px);
+
+    line-height:
+        1.05;
+}
+
+
+.final-message p {
+    margin-top:
+        20px;
+
+    font-size:
+        16px;
+
+    opacity:
+        0.7;
+}
+
+
+.big-heart {
+    margin-top:
+        35px;
+
+    font-size:
+        120px;
+
+    color:
+        #e91e63;
+
+    text-shadow:
+        0 0 15px #e91e63,
+        0 0 40px rgba(233,30,99,0.6);
+
+    animation:
+        heartbeatButton 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.7)
+            rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes photoFloat1 {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+
+@keyframes photoFloat2 {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 10px;
+    }
+}
+
+
+@keyframes photoFloat3 {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -10px;
+    }
+}
+
+
+@keyframes photoFloat4 {
+
+    0%, 100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: 8px;
+    }
+}
+
+
+@keyframes heartbeatButton {
+
+    0%, 100% {
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            scale(1.08);
+    }
+}
+
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(30deg)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            translateX(-25px)
+            rotate(70deg)
+            scale(0.5);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes reasonHeartFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(180deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(10px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE — MAIN PHONE LAYOUT
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .landing-content {
+        width: 100%;
+
+        height: 100dvh;
+
+        min-height: 700px;
+    }
+
+
+    /* -------------------------
+       TITLE
+    ------------------------- */
+
+    .main-title {
+        top: 28px;
+
+        font-size:
+            clamp(43px, 12vw, 58px);
+    }
+
+
+    .subtitle {
+        top: 210px;
+
+        font-size:
+            12px;
+    }
+
+
+    /* -------------------------
+       LANDING PHOTOS
+    ------------------------- */
+
+    .photo {
+        width:
+            94px;
+
+        height:
+            128px;
+    }
+
+
+    /* Upper left */
+
+    .photo1 {
+        left:
+            3%;
+
+        top:
+            285px;
+    }
+
+
+    /* Upper right */
+
+    .photo2 {
+        right:
+            3%;
+
+        top:
+            275px;
+    }
+
+
+    /* Lower left */
+
+    .photo3 {
+        left:
+            8%;
+
+        top:
+            445px;
+    }
+
+
+    /* Lower right */
+
+    .photo4 {
+        right:
+            7%;
+
+        top:
+            465px;
+    }
+
+
+    /* -------------------------
+       CLICK ME
+    ------------------------- */
+
+    .heart-button {
+        bottom:
+            8px;
+
+        width:
+            125px;
+
+        height:
+            115px;
+    }
+
+
+    .heart-button span {
+        font-size:
+            125px;
+    }
+
+
+    .heart-button p {
+        font-size:
+            13px;
+    }
+
+
+    /* -------------------------
+       LETTER
+    ------------------------- */
+
+    .letter-wrapper {
+        padding:
+            40px 15px 100px;
+    }
+
+
+    .letter {
+        padding:
+            30px 20px;
+    }
+
+
+    .letter-text {
+        font-size:
+            20px;
+
+        line-height:
+            1.65;
+    }
+
+
+    /* -------------------------
+       LETTER PHOTOS
+    ------------------------- */
+
+    .letter-photo {
+        width:
+            80px;
+
+        height:
+           100px;
+
+        padding:
+            4px;
+    }
+
+
+    .frame1 {
+        left:
+            1%;
+
+        top:
+            75px;
+    }
+
+
+    .frame2 {
+        right:
+            1%;
+
+        top:
+            180px;
+    }
+
+
+    .frame3 {
+        left:
+            1%;
+
+        top:
+            400px;
+    }
+
+
+    .frame4 {
+        right:
+            1%;
+
+        top:
+            560px;
+    }
+
+
+    .frame5 {
+        left:
+            50%;
+
+        bottom:
+            25px;
+    }
+
+
+    /* -------------------------
+       REASONS
+    ------------------------- */
+
+    .reason {
+        padding:
+            20px 3px;
+    }
+
+
+    .reason p {
+        font-size:
+            clamp(26px, 7.5vw, 40px);
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .main-title {
+        font-size:
+            42px;
+    }
+
+
+    .subtitle {
+        top:
+            190px;
+    }
+
+
+    .photo {
+        width:
+            82px;
+
+        height:
+            112px;
+    }
+
+
+    .photo1 {
+        left:
+            2%;
+
+        top:
+            270px;
+    }
+
+
+    .photo2 {
+        right:
+            2%;
+
+        top:
+            265px;
+    }
+
+
+    .photo3 {
+        left:
+            7%;
+
+        top:
+            425px;
+    }
+
+
+    .photo4 {
+        right:
+            6%;
+
+        top:
+            440px;
+    }
+
+
+    .heart-button {
+        width:
+            115px;
+
+        height:
+            105px;
+    }
+
+
+    .heart-button span {
+        font-size:
+            115px;
+    }
+
+
+    .heart-button p {
+        font-size:
+            12px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP PREVIEW
+========================================================= */
+
+@media (min-width: 601px) {
+
+    .landing-content {
+        max-width:
+            700px;
+
+        min-height:
+            750px;
+    }
+
+
+    .photo {
+        width:
+            130px;
+
+        height:
+            175px;
+    }
+
+
+    .photo1 {
+        left:
+            3%;
+
+        top:
+            330px;
+    }
+
+
+    .photo2 {
+        right:
+            3%;
+
+        top:
+            310px;
+    }
+
+
+    .photo3 {
+        left:
+            15%;
+
+        top:
+            510px;
+    }
+
+
+    .photo4 {
+        right:
+            13%;
+
+        top:
+            530px;
+    }
+
+
+    .letter {
+        padding:
+            50px 55px;
+    }
+
+
+    .letter-text {
+        font-size:
+            24px;
+    }
+
+}
