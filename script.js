@@ -266,19 +266,40 @@ if (reasonHearts) {
 /* =========================================
    MUSIC
 ========================================= */
+/* =========================================
+   MUSIC
+========================================= */
+
 const music = document.getElementById("backgroundMusic");
 const clickMe = document.getElementById("clickMe");
 
+if (music) {
+    music.volume = 0.5;
+}
+
+/* INDEX PAGE — Click Me starts music.mp3 */
 if (music && clickMe) {
+
     clickMe.addEventListener("click", function(event) {
+
         event.preventDefault();
 
-        music.volume = 0.5;
+        music.play()
+            .then(() => {
+                window.location.href = "letter.html";
+            })
+            .catch(() => {
+                window.location.href = "letter.html";
+            });
 
-        music.play().then(() => {
-            window.location.href = "letter.html";
-        }).catch(() => {
-            window.location.href = "letter.html";
-        });
     });
+}
+
+/* OTHER PAGES — try autoplay */
+if (music && !clickMe) {
+
+    music.play().catch(() => {
+        console.log("Autoplay blocked by browser. User interaction required.");
+    });
+
 }
